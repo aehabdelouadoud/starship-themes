@@ -1,0 +1,122 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+# Icons
+#        ➜ ✗                       
+#                                 
+#                              
+#                             
+# Pipes ╰─ ╭─
+# Powerline symbols                                     
+# Wedges 🭧🭒 🭣🭧🭓
+# Random noise 🬖🬥🬔🬗
+
+right_format = """\
+$cmd_duration
+"""
+
+# $username$hostname$directory $git_branch
+format = """
+$directory$character
+"""
+
+#    
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[ ](bold fg:blue)[  ](bold bg:blue fg:#000000)[ ](bold fg:blue)"
+error_symbol   = "[ ](bold fg:red)[  ](bold bg:red fg:#000000)[ ](bold fg:red)"
+
+vimcmd_symbol             = "[ ](bold fg:blue)[  ](bold bg:blue fg:#000000)[ ](bold fg:blue)"
+vimcmd_replace_one_symbol = "[ ](bold fg:blue)[  ](bold bg:blue fg:#000000)[ ](bold fg:blue)"
+vimcmd_replace_symbol     = "[ ](bold fg:blue)[  ](bold bg:blue fg:#000000)[ ](bold fg:blue)"
+vimcmd_visual_symbol      = "[ ](bold fg:blue)[  ](bold bg:blue fg:#000000)[ ](bold fg:blue)"
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[git_branch]
+style = "bg: green"
+symbol = "󰘬"
+truncation_length = 4
+truncation_symbol = ""
+format = "[ ](bold fg:green)[$symbol $branch(:$remote_branch)](fg:black bg:green)[ ](bold fg:green)"
+#    
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+[git_status]
+conflicted = " 🏳 "
+ahead = " 🏎💨 "
+behind = " 😰 "
+diverged = " 😵 "
+untracked = " 🤷 ‍"
+stashed = " 📦 "
+modified = " 📝 "
+staged = '[++\($count\)](blue)'
+renamed = " ✍️ "
+deleted = " 🗑 "
+
+[hostname]
+ssh_only = false
+format =  "[ ](bold bg:cyan fg:blue)[$hostname](bg:cyan bold fg:#000000)[ ](bold fg:cyan bg:blue)"
+trim_at = ".companyname.com"
+disabled = false
+
+[line_break]
+disabled = false
+
+[memory_usage]
+disabled = true
+threshold = -1
+symbol = " "
+style = "bold dimmed blue"
+
+[time]
+disabled = true
+format = '🕙[\[ $time \]]($style) '
+time_format = "%T"
+
+[username]
+style_user = "bold bg:blue fg:#000000"
+style_root = "red bold"
+format = "[ ](bold fg:blue)[$user]($style) "
+#    
+disabled = false
+show_always = true
+
+[directory]
+home_symbol = ""
+# root_symbol = ""
+read_only = "  "
+style = "bold bg:blue fg:#000000"
+truncation_length = 3
+truncation_symbol = "…/"
+format = '[ ](fg:blue)[$path]($style)[ ](fg:blue)'
+
+
+[directory.substitutions]
+"documents" = ""
+# "/" = "  "
+"downloads" = "  "
+"music" = "  "
+"pictures" = "  "
+"videos" = "  "
+"vault" = "  "
+"personal" = "  "
+"notes" = " \uf24a "
+"library" = " \uf02d "
+"demos" = "  "
+"qemu" = "  "
+
+[c]
+format = 'via [$name $version]($style)'
+
+[cmd_duration]
+disabled = true
+min_time = 0
+format = '[🬈🬖🬥🬅 ](bold bg:yellow fg:#000000)[time:$duration](bold bg:yellow fg:#000000)[ 🬖🬥🬔🬗](bold bg:yellow fg:#000000)'
