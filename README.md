@@ -1,5 +1,7 @@
 # A bunch of startship themes that aren't mainly built by me.
 
+![image](https://github.com/user-attachments/assets/c3b32ade-298a-4fca-baaf-3b581add2c88)
+
 ![image](https://github.com/user-attachments/assets/ba2255a4-d952-4c7b-afd4-54c5b6fffd0f)
 
 ![image](https://github.com/user-attachments/assets/6f9a001e-fb69-4796-90d2-f73020bcbeb3)
